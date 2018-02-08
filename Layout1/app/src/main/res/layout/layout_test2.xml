@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TableRow android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00BCD4"
+            android:text="국"
+            android:gravity="center"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B2EBF2"
+            android:text="100"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </TableRow>
+
+    <TableRow android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#9C27B0"
+            android:text="영"
+            android:gravity="center"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CE93D8"
+            android:text="100"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </TableRow>
+
+    <TableRow android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4CAF50"
+            android:text="영"
+            android:gravity="center"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A5D6A7"
+            android:text="100"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </TableRow>
+</TableLayout>

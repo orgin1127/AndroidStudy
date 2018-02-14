@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">이벤트</string>
+    <string name="bt1_st">첫 버튼 string xml</string>
+</resources>

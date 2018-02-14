@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff00"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:inputType="number"
+        android:singleLine="true"
+        android:hint="0"
+        android:id="@+id/input1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:text="+"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff00"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:inputType="number"
+        android:hint="0"
+        android:id="@+id/input2"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:text="="/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff00"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:id="@+id/resultCalc"
+        android:hint="0"
+        android:inputType="number" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계산"
+        android:id="@+id/calc"
+        android:onClick="test"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지우기"
+        android:id="@+id/clear"
+        android:onClick="test"/>
+</LinearLayout>

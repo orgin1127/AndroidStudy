@@ -5,11 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.StringTokenizer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -99,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     inputN = "";
                     break;
                 case R.id.calculate:
+
                     break;
                 case R.id.division:
                     if (calcResult == 0) {

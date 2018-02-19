@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText input1, input2, resultCalc;
     Button calc, clear;
+    int btid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         resultCalc = (EditText) findViewById(R.id.resultCalc);
         calc = (Button) findViewById(R.id.calc);
         clear = (Button) findViewById(R.id.clear);
+
+
 
     }
 

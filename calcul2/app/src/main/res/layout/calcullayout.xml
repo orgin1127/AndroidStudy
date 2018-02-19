@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#B2EBF2"
+        android:textSize="30sp"
+        android:id="@+id/input1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#B2EBF2"
+        android:layout_weight="2"
+        android:textSize="30sp"
+        android:id="@+id/input2" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#9E9E9E">
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="5dp">
+            <Button
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:textSize="20sp"/>
+            <Button
+                android:text="/"
+                android:textSize="20sp"
+                android:id="@+id/division"/>
+            <Button
+                android:text="X"
+                android:textSize="20sp"
+                android:id="@+id/multiply"/>
+            <Button
+                android:text="지우기"
+                android:textSize="20sp"
+                android:id="@+id/clear"/>
+        </TableRow>
+
+        <TableRow android:gravity="center">
+            <Button
+                android:text="7"
+                android:textSize="20sp"
+                android:id="@+id/bt7"/>
+            <Button
+                android:text="8"
+                android:textSize="20sp"
+                android:id="@+id/bt8"/>
+            <Button
+                android:text="9"
+                android:textSize="20sp"
+                android:id="@+id/bt9"/>
+            <Button
+                android:text="-"
+                android:textSize="20sp"
+                android:id="@+id/minus"/>
+        </TableRow>
+
+        <TableRow android:gravity="center">
+            <Button
+                android:text="4"
+                android:textSize="20sp"
+                android:id="@+id/bt4"/>
+            <Button
+                android:text="5"
+                android:textSize="20sp"
+                android:id="@+id/bt5"/>
+            <Button
+                android:text="6"
+                android:textSize="20sp"
+                android:id="@+id/bt6"/>
+            <Button
+                android:text="+"
+                android:textSize="20sp"
+                android:id="@+id/plus"/>
+        </TableRow>
+
+        <TableRow android:gravity="center">
+            <Button
+                android:text="1"
+                android:textSize="20sp"
+                android:id="@+id/bt1"/>
+            <Button
+                android:text="2"
+                android:textSize="20sp"
+                android:id="@+id/bt2"/>
+            <Button
+                android:text="3"
+                android:textSize="20sp"
+                android:id="@+id/bt3"/>
+            <Button
+                android:text="()"
+                android:textSize="20sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <Button
+                android:text="0"
+                android:textSize="20sp"
+                android:id="@+id/bt0"/>
+            <Button
+                android:text="."
+                android:textSize="20sp"/>
+            <Button
+                android:text="+/-"
+                android:textSize="20sp"/>
+            <Button
+                android:text="="
+                android:textSize="20sp"
+                android:id="@+id/calculate"/>
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

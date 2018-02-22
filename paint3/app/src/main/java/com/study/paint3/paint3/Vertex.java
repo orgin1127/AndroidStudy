@@ -7,6 +7,7 @@ public class Vertex {
     private float y;
     private int color;
     private boolean drawable;
+    private String drawType;
 
     public float getX() {
         return x;
@@ -40,6 +41,14 @@ public class Vertex {
         this.drawable = drawable;
     }
 
+    public String getDrawType() {
+        return drawType;
+    }
+
+    public void setDrawType(String drawType) {
+        this.drawType = drawType;
+    }
+
     public Vertex() {
     }
 
@@ -48,5 +57,13 @@ public class Vertex {
         this.y = y;
         this.color = color;
         this.drawable = drawable;
+    }
+
+    public Vertex(float x, float y, int color, boolean drawable, String drawType) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.drawable = drawable;
+        this.drawType = drawType;
     }
 }

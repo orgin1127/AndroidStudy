@@ -1,0 +1,49 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.menu1.MainActivity">
+
+    <item android:id="@+id/menu1"
+        android:title="첫번째 메뉴" />
+
+    <item android:id="@+id/menu2"
+        android:title="두번째 메뉴" />
+
+    <item android:id="@+id/submenu1"
+        android:title="서브메뉴1">
+        <menu>
+            <item android:id="@+id/menu3"
+                android:title="세번째 메뉴" />
+            <item android:id="@+id/menu4"
+                android:title="네번째 메뉴" />
+        </menu>
+    </item>
+
+    <item android:id="@+id/submenu2"
+        android:title="서브메뉴2">
+        <menu>
+            <group android:id="@+id/checkgroup"
+                android:checkableBehavior="all">
+                <item android:id="@+id/check1"
+                    android:title="큰글자"
+                    android:checked="true" />
+                <item android:id="@+id/check2"
+                    android:title="체크박스2" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:id="@+id/submenu3"
+        android:title="서브메뉴3">
+        <menu>
+            <group android:id="@+id/optiongroup"
+                android:checkableBehavior="single">
+                <item android:id="@+id/option1"
+                    android:title="빨강"
+                    android:checked="true" />
+                <item android:id="@+id/option2"
+                    android:title="파랑" />
+            </group>
+        </menu>
+    </item>
+</menu>

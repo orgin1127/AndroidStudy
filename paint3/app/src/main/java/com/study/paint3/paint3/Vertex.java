@@ -1,5 +1,7 @@
 package com.study.paint3.paint3;
 
+import android.widget.Button;
+
 //이벤트 상황을 담는 VO
 public class Vertex {
 

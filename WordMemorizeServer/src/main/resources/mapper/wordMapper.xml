@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- 단어 처리 SQL -->
+<mapper namespace="com.wordmemorize.www.Mappers.WordMapper">
+	<!-- 커스텀 단어 추가 -->
+	<insert id="insertCustomWord" parameterType="customWord">
+		insert 
+			into 
+				wordMemorize_CustomWord
+										(wordNumber
+										, word
+										, yomigana
+										, meaning
+										, wordLevels
+										, linkAddress
+										, addedMemberID)
+				values
+										(wordMemorize_CustomWord_seq.nextVal
+										, #{word}
+										, #{yomigana}
+										, #{meaning}
+										, #{wordLevels}
+										, #{linkAddress}
+										, #{addedMemberID})		
+	</insert>
+	<!-- 커스텀 단어 중복 검사 -->
+	<select id="searchDuplicateCustomWord" parameterType="customWord" resultType="int">
+		select count(*) from wordMemorize_CustomWord
+		where addedMemberID = #{addedMemberID} AND word = #{word}
+	</select>
+	<!-- 단어 보기 by 등급 -->
+	<select id="getWordList" parameterType="String" resultType="word">
+		select 
+				* 
+		from	
+				wordMemorize_Word
+		where wordLevels = #{wordLevel}
+		order by wordNumber
+	</select>
+	<!-- 단어 보기 by 커스텀 -->
+	<select id="getCustomWordList" parameterType="customWord" resultType="customWord">
+		select
+				*
+		from
+				wordMemorize_CustomWord
+		where addedMemberID = #{addedMemberID}
+		order by wordNumber
+	</select>
+	<!-- 단어 검색 by 검색타입 -->
+	<select id="getSearchWord" parameterType="Hashmap" resultType="Word">
+  		select 
+  				*
+		from
+				wordMemorize_Word
+  	<if test="searchText != null and searchType == 'word'">
+  		where 
+  				word like '%'||#{searchText}||'%'
+  	</if>
+  	<if test="searchText != null and searchType == 'yomigana'">
+  		where 
+  				yomigana like '%'||#{searchText}||'%'
+  	</if>
+  	<if test="searchText != null and searchType == 'meaning'">
+  		where 
+  				meaning like '%'||#{searchText}||'%'
+  	</if>
+  	<if test="searchText != null and searchType == 'wordAndYomi'">
+  		where 
+  				word like '%'||#{searchText}||'%'
+  					or 
+  				yomigana like '%'||#{searchText}||'%'
+  	</if>
+  	order by wordNumber
+  </select>
+</mapper>

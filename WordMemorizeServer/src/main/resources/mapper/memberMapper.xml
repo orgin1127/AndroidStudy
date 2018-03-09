@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원정보 처리 SQL -->
+<mapper namespace="com.wordmemorize.www.Mappers.MemberMappers">
+
+	<!-- 회원 정보 저장 -->
+	<insert id="insertMember" parameterType="member">
+		insert into wordMemorize_Member (
+			memberNumber
+			,memberID
+			,password
+			,memberName
+		)
+		values (
+			wordMemorize_Member_seq.nextVal
+			, #{memberID}
+			, #{password}
+			, #{memberName}
+		)
+	</insert>
+	<!-- 회원검색 (by ID) -->
+	<select id="searchMember" parameterType="String" resultType="String">
+		select memberID from wordMemorize_Member
+		where memberID = #{meberID}
+	</select>
+	
+	<!-- login -->
+	<select id="loginMember" parameterType="member" resultType="member">
+		select * from wordMemorize_Member
+		where 
+			memberID = #{memberID} 
+				and
+			password = #{password}
+	</select>
+</mapper>
+

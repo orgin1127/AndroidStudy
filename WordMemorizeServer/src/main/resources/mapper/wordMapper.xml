@@ -25,6 +25,11 @@
 										, #{linkAddress}
 										, #{addedMemberID})		
 	</insert>
+	<!-- 커스텀 단어 삭제 -->
+	<delete id="deleteCustomWord" parameterType="customWord">
+		delete from wordMemorize_CustomWord
+		where word = #{word} and addedMemberID = #{addedMemberID}
+	</delete>
 	<!-- 커스텀 단어 중복 검사 -->
 	<select id="searchDuplicateCustomWord" parameterType="customWord" resultType="int">
 		select count(*) from wordMemorize_CustomWord

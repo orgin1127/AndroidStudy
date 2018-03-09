@@ -206,6 +206,8 @@ public class WordViewActivityCustom extends AppCompatActivity {
             //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
+
+
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -249,6 +251,66 @@ public class WordViewActivityCustom extends AppCompatActivity {
                 Intent it3 = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(it3);
 
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else if(v.getId() == R.id.viewWordDeleteBT) {
+            Log.d("DELETE CUSTOM WORD", "ACTIVATED");
+            try{
+                StringBuilder sb = new StringBuilder();
+
+                sb.append("word="+wordList.get(pageNum+1).getString("word"));
+                sb.append("&addedMemberID="+MainActivity.loginID);
+                String deleteWord = sb.toString();
+
+                Log.d("check delete word", deleteWord);
+                try{
+                    //서버의 IP주소, PORT번호, Context root, Request Mapping경로
+                    url = new URL("http://203.233.199.96:8888/www/deleteCustomWord");
+                } catch (MalformedURLException e){
+                    Toast.makeText(this,"잘못된 URL입니다.", Toast.LENGTH_SHORT).show();
+                }
+                try {
+                    con = (HttpURLConnection) url.openConnection();
+
+                    if (con != null) {
+
+                        con.setConnectTimeout(10000);    //연결제한시간. 0은 무한대기.
+                        con.setUseCaches(false);        //캐쉬 사용여부
+                        con.setRequestMethod("POST"); // URL 요청에 대한 메소드 설정 : POST.
+                        con.setRequestProperty("Accept-Charset", "UTF-8"); // Accept-Charset 설정.
+                        con.setRequestProperty("Context_Type", "application/x-www-form-urlencoded;cahrset=UTF-8");
+
+                        OutputStream os = con.getOutputStream();
+                        os.write(deleteWord.getBytes("UTF-8"));
+                        os.flush();
+                        os.close();
+                        if(con.getResponseCode() == HttpURLConnection.HTTP_OK) {
+
+                            BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
+
+                            String line;
+                            String page = "";
+
+                            while ((line = reader.readLine()) != null) {
+                                page += line;
+                            }
+                            Toast.makeText(this, page, Toast.LENGTH_SHORT).show();
+
+                            recreate();
+                        }
+                    }
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+                finally {
+                    if(con != null){
+                        con.disconnect();
+                    }
+                }
             }
             catch (Exception e) {
                 e.printStackTrace();

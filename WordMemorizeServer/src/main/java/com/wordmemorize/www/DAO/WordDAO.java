@@ -46,11 +46,15 @@ public class WordDAO {
 		return wm.insertCustomWord(cw);
 	}
 	
+	public int deleteCustomWord(CustomWord cw) {
+		WordMapper wm = session.getMapper(WordMapper.class);
+		return wm.deleteCustomWord(cw);
+	}
+	
 	public int searchDuplicateCustomWord(CustomWord cw) {
 		WordMapper wm = session.getMapper(WordMapper.class);
 		int i = wm.searchDuplicateCustomWord(cw);
 		
 		return i;
-		
 	}
 }

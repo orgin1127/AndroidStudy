@@ -7,9 +7,12 @@
 		<typeAlias type="com.wordmemorize.www.VO.Member" alias="member" />
 		<typeAlias type="com.wordmemorize.www.VO.Word" alias="word" />
 		<typeAlias type="com.wordmemorize.www.VO.CustomWord" alias="customWord"/>
+		<typeAlias type="com.wordmemorize.www.VO.BlinkGame" alias="blinkGame" />
+		<typeAlias type="com.wordmemorize.www.VO.BlinkGameInfo" alias="blinkGameInfo"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml" />
 		<mapper resource="mapper/wordMapper.xml" />
+		<mapper resource="mapper/blinkMapper.xml" />
 	</mappers>
 </configuration>

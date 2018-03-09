@@ -89,6 +89,21 @@ public class WordController {
 			result = "단어 등록 성공";
 			return result;
 		}
-		
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="deleteCustomWord", method = RequestMethod.POST, produces="application/text; charset=utf8")
+	public String deleteCustomWord(CustomWord cw) {
+		String result = "";
+		logger.debug(cw.toString());
+		int check = wDAO.deleteCustomWord(cw);
+		if(check == 1) {
+			result = "단어 삭제 성공";
+			return result;
+		}
+		else {
+			result = "단어 삭제 실패";
+			return result;
+		}
 	}
 }

@@ -113,28 +113,28 @@ public class AfterLoginActivity extends Activity {
                         searchWord = (EditText) wordSearchTypeSelect_Layout.findViewById(R.id.searchWordET);
                         if(searchTypeWord.isChecked()) {
                             Log.d("check searchType","Word");
-                            Intent it = new Intent(AfterLoginActivity.this, WordViewActiviy.class);
+                            Intent it = new Intent(AfterLoginActivity.this, );
                             it.putExtra("searchType", "word");
                             it.putExtra("searchWord", searchWord.getText());
                             startActivity(it);
                         }
                         else if(searchTypeYomi.isChecked()) {
                             Log.d("check searchType","Yomi");
-                            Intent it = new Intent(AfterLoginActivity.this, WordViewActiviy.class);
+                            Intent it = new Intent(AfterLoginActivity.this, );
                             it.putExtra("searchType", "yomigana");
                             it.putExtra("searchWord", searchWord.getText());
                             startActivity(it);
                         }
                         else if(searchTypeMean.isChecked()) {
                             Log.d("check searchType","Mean");
-                            Intent it = new Intent(AfterLoginActivity.this, WordViewActiviy.class);
+                            Intent it = new Intent(AfterLoginActivity.this, );
                             it.putExtra("searchType", "meaning");
                             it.putExtra("searchWord", searchWord.getText());
                             startActivity(it);
                         }
                         else if(searchTypeWordAndMean.isChecked()) {
                             Log.d("check searchType","Word&Mean");
-                            Intent it = new Intent(AfterLoginActivity.this, WordViewActiviy.class);
+                            Intent it = new Intent(AfterLoginActivity.this, );
                             it.putExtra("searchType", "wordAndYomi");
                             it.putExtra("searchWord", searchWord.getText());
                             startActivity(it);
@@ -142,6 +142,63 @@ public class AfterLoginActivity extends Activity {
                     }
                 });
                 ab2.show();
+                break;
+            case R.id.blinkGameBT:
+                Log.d("Blink game Button", "ACTIVATED");
+                AlertDialog.Builder ab3 = new AlertDialog.Builder(this);
+                ab3.setTitle("단어 레벨 선택");
+                ab3.setCancelable(false);
+                final LinearLayout wordViewSelect_LayoutForBlinkGame = (LinearLayout) View.inflate(this, R.layout.word_level_select_layoutForBlinkGame, null);
+                ab3.setView(wordViewSelect_LayoutForBlinkGame);
+                ab3.setNegativeButton("취소",null);
+                ab3.setPositiveButton("선택", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        n1 = (RadioButton) wordViewSelect_LayoutForBlinkGame.findViewById(R.id.wordLevelN1);
+                        n2 = (RadioButton) wordViewSelect_LayoutForBlinkGame.findViewById(R.id.wordLevelN2);
+                        n3 = (RadioButton) wordViewSelect_LayoutForBlinkGame.findViewById(R.id.wordLevelN3);
+                        n4 = (RadioButton) wordViewSelect_LayoutForBlinkGame.findViewById(R.id.wordLevelN4);
+                        n5 = (RadioButton) wordViewSelect_LayoutForBlinkGame.findViewById(R.id.wordLevelN5);
+                        customWord = (RadioButton) wordViewSelect_LayoutForBlinkGame.findViewById(R.id.customWord);
+                        if(n1.isChecked()){
+                            Log.d("n1","checked");
+                            Intent it2 = new Intent(AfterLoginActivity.this,WordViewActiviy.class);
+                            it2.putExtra("level", "N1");
+                            startActivity(it2);
+                        }
+                        else if(n2.isChecked()){
+                            Log.d("n2","checked");
+                            Intent it2 = new Intent(AfterLoginActivity.this,WordViewActiviy.class);
+                            it2.putExtra("level", "N2");
+                            startActivity(it2);
+                        }
+                        else if(n3.isChecked()){
+                            Log.d("n3","checked");
+                            Intent it2 = new Intent(AfterLoginActivity.this,WordViewActiviy.class);
+                            it2.putExtra("level", "N3");
+                            startActivity(it2);
+                        }
+                        else if(n4.isChecked()){
+                            Log.d("n4","checked");
+                            Intent it2 = new Intent(AfterLoginActivity.this,WordViewActiviy.class);
+                            it2.putExtra("level", "N4");
+                            startActivity(it2);
+                        }
+                        else if(n5.isChecked()){
+                            Log.d("n5","checked");
+                            Intent it2 = new Intent(AfterLoginActivity.this,WordViewActiviy.class);
+                            it2.putExtra("level", "N5");
+                            startActivity(it2);
+                        }
+                        else if(customWord.isChecked()){
+                            Log.d("customWord","checked");
+                            Intent it2 = new Intent(AfterLoginActivity.this,WordViewActivityCustom.class);
+                            it2.putExtra("level", "customWord");
+                            startActivity(it2);
+                        }
+                    }
+                });
+                ab3.show();
                 break;
         }
     }

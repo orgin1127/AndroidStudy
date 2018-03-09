@@ -8,6 +8,7 @@ import com.wordmemorize.www.VO.Word;
 
 public interface WordMapper {
 	public int insertCustomWord(CustomWord cw);
+	public int deleteCustomWord(CustomWord cw);
 	public int searchDuplicateCustomWord(CustomWord cw);
 	public ArrayList<Word> getWordList(String wordLevel);
 	public ArrayList<CustomWord> getCustomWordList(CustomWord cw);

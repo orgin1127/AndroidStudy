@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">W o r d M e m o r i z e</string>
+    <string name="title_activity_word_view">WordViewActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_word_view_activiy">WordViewActiviy</string>
+    <string name="title_activity_search_word_view">searchWordViewActivity</string>
+    <string name="title_activity_word_view_custom">WordViewActivityCustom</string>
+</resources>

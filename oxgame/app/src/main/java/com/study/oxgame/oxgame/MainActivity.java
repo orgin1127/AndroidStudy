@@ -3,16 +3,13 @@ package com.study.oxgame.oxgame;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bt;
     TextView tv1;
     Button btReStart;
 
@@ -149,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 player2CheckCount = 0;
                 Toast.makeText(MainActivity.this, "플레이어 2의 승리입니다.", Toast.LENGTH_LONG).show();
                 tv1.setText("플레이어 2승리");
+
                 result = true;
                 return result;
             }
@@ -181,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
                 player2CheckCount = 0;
                 Toast.makeText(MainActivity.this, "플레이어 2의 승리입니다.", Toast.LENGTH_LONG).show();
                 tv1.setText("플레이어 2승리");
+
                 result = true;
                 return result;
             }
@@ -203,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 player2CheckCount = 0;
                 Toast.makeText(MainActivity.this, "플레이어 1의 승리입니다.", Toast.LENGTH_LONG).show();
                 tv1.setText("플레이어 1승리");
+
                 result = true;
                 return result;
             }
@@ -211,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
                 player2CheckCount = 0;
                 Toast.makeText(MainActivity.this, "플레이어 2의 승리입니다.", Toast.LENGTH_LONG).show();
                 tv1.setText("플레이어 2승리");
+
                 result = true;
                 return result;
             }
@@ -236,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
             player2CheckCount = 0;
             Toast.makeText(MainActivity.this, "플레이어 1의 승리입니다.", Toast.LENGTH_LONG).show();
             tv1.setText("플레이어 1승리");
+
             result = true;
             return result;
         }
@@ -244,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
             player2CheckCount = 0;
             Toast.makeText(MainActivity.this, "플레이어 2의 승리입니다.", Toast.LENGTH_LONG).show();
             tv1.setText("플레이어 2승리");
+
             result = true;
             return result;
         }

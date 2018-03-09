@@ -1,0 +1,15 @@
+<resources>
+
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"></style>
+    초기 테마에러 때문에 아래 코드로 변경
+
+    전체 화면 (액션바숨기기,Full 스크린처리)를 위해서 아래 코드로 변경
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+</resources>

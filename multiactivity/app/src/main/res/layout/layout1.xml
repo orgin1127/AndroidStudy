@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textSize="50sp"
+        android:text="메인 액티비티"
+        android:id="@+id/text"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="첫 버튼"
+        android:id="@+id/bt1"
+        android:onClick="ButtonClick"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="대화상자 2"
+        android:onClick="ButtonClick"
+        android:id="@+id/bt2"
+         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="대화상자 3"
+        android:onClick="ButtonClick"
+        android:id="@+id/bt3"
+         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="대화상자 4"
+        android:onClick="ButtonClick"
+        android:id="@+id/bt4"
+         />
+
+</LinearLayout>

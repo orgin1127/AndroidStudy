@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.wordmemorize.www.Mappers.WordMapper;
+import com.wordmemorize.www.VO.BlinkGameInfo;
 import com.wordmemorize.www.VO.CustomWord;
 import com.wordmemorize.www.VO.Word;
 
@@ -39,6 +40,12 @@ public class WordDAO {
 		WordMapper wm = session.getMapper(WordMapper.class);
 		ArrayList<Word> wordList = wm.getSearchWord(searchMap);
 		return wordList;
+	}
+	
+	public ArrayList<BlinkGameInfo> getIncorllectWordList(String memberID) {
+		WordMapper wm = session.getMapper(WordMapper.class);
+		ArrayList<BlinkGameInfo> incollectWordList = wm.getIncorllectWordList(memberID);
+		return incollectWordList;
 	}
 	
 	public int insertCustomWord(CustomWord cw) {

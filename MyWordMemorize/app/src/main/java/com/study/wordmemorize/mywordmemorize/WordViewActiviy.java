@@ -50,7 +50,7 @@ public class WordViewActiviy extends AppCompatActivity {
     private static ViewPager mViewPager;
     private static int pageNum;
     private String key, searchString, word;
-
+    private static String viewIncorrectWord;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +76,10 @@ public class WordViewActiviy extends AppCompatActivity {
 
         if (key.equals("level")){
             if(it.getStringExtra("level").equals("customWord")){
+                wordLevel = "wordLevel="+it.getStringExtra("level")+"&memberID="+MainActivity.loginID;
+            }
+            else if(it.getStringExtra("level").equals("incollectWord")){
+                viewIncorrectWord = "incollectWord";
                 wordLevel = "wordLevel="+it.getStringExtra("level")+"&memberID="+MainActivity.loginID;
             }
             else {
@@ -136,8 +140,6 @@ public class WordViewActiviy extends AppCompatActivity {
                     }
                     wordList = jsonParse(page);
                     Log.d("size", wordList.size()+"");
-                    Log.d("list check", wordList.get(0).getString("word"));
-                    Log.d("list check", wordList.get(0).getString("meaning"));
                 }
             }
         }
@@ -216,9 +218,17 @@ public class WordViewActiviy extends AppCompatActivity {
             Log.d("idk",""+(getArguments().getInt(ARG_SECTION_NUMBER)));
             Log.d("pageNumber","pageNum: "+pageNum+", getArg: "+getArguments().getInt(ARG_SECTION_NUMBER)+", getuser:");
             try{
-                textView.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("word").toString());
-                yomi.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("yomigana").toString());
-                mean.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("meaning").toString());
+                if(viewIncorrectWord != null && viewIncorrectWord.equals("incollectWord")){
+                    textView.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("incollectBGameWord").toString());
+                    yomi.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("incorrectYomigana").toString());
+                    mean.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("incorrectMeaning").toString());
+                }
+                else {
+
+                    textView.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("word").toString());
+                    yomi.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("yomigana").toString());
+                    mean.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("meaning").toString());
+                }
 
             }
             catch (Exception e) {
@@ -351,9 +361,6 @@ public class WordViewActiviy extends AppCompatActivity {
                 item = jarray.getJSONObject(i);
                 wordList.add(item);
             }
-            item = jarray.getJSONObject(0);
-            String str1 = item.getString("word");
-            Log.d("plz no break", str1);
         } catch (Exception e) {
             e.printStackTrace();
         }

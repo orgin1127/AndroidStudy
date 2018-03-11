@@ -2,5 +2,60 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="com.wordmemorize.www.Mappers.BlinkGameMapper">
-  </mapper>
+<mapper namespace="com.wordmemorize.www.Mappers.BlinkGameMapper">
+	<!-- BlinkGame Member추가 (첫 시작시만) -->
+	<insert id="insertBlinkGame" parameterType="blinkGame">
+		insert into wordMemorize_BlinkGame
+						(blinkGameNumber
+						, memberID)
+					values
+							(wordMemorize_BlinkGame_seq.nextVal
+							, #{memberID})
+	</insert>
+	<!-- BlinkGame 정보 갱신 -->
+	<update id="updateBlinkGame" parameterType="blinkGame">
+		update wordMemorize_BlinkGame
+			set
+				highScore = #{highScore}
+				, maxCombo = #{maxCombo}
+				, playCount = #{playCount}
+			where
+				blinkGameNumber = #{blinkGameNumber}
+				and
+				memberID = #{memberID}
+	</update>
+	<!-- BlinkGame 틀린 단어 등록 -->
+	<insert id="insertIncollectGameWord" parameterType="blinkGameInfo">
+		insert into wordMemorize_BlinkGameInfo
+							(blinkGameInfoNumber
+							, incollectBGameWord
+							, incorrectMeaning
+							, incorrectYomigana
+							, memberID)
+					values
+							(wordMemorize_BlinkGameInfo_seq.nextVal
+							, #{incollectBGameWord}
+							, #{incorrectMeaning}
+							, #{incorrectYomigana}
+							, #{memberID})
+	</insert>
+	<!-- BlinkGame 틀린 단어 업데이트 -->
+	<update id="updateIncollectGameWord" parameterType="blinkGameInfo">
+		update wordMemorize_BlinkGameInfo
+			set 
+				incollectingCount = #{incollectingCount}
+			where memberID = #{memberID} AND incollectBGameWord = #{incollectBGameWord}
+	</update>
+	<!-- BlinkGame Member정보 가져오기 -->
+	<select id="searchBlinkGameMember" parameterType="String" resultType="blinkGame">
+		select * from wordMemorize_BlinkGame
+		where memberID = #{memberID}
+	</select>
+	
+	<!-- 처음 틀린 단어 등록 전 이전 등록 기록 조회-->
+	<select id="searchBlinkGameInfo" parameterType="blinkGameInfo" resultType="blinkGameInfo">
+		select * from wordMemorize_BlinkGameInfo
+		where memberID = #{memberID} AND incollectBGameWord = #{incollectBGameWord}
+	</select>
+	
+</mapper>

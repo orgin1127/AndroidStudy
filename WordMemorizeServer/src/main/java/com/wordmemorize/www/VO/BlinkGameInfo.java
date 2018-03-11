@@ -1,10 +1,14 @@
 package com.wordmemorize.www.VO;
 
 public class BlinkGameInfo extends Word {
+	
 	private int blinkGameInfoNumber;
     private String incollectBGameWord;
+    private String incorrectMeaning;
+    private String incorrectYomigana;
     private String memberID;
     private int incollectingCount;
+    
 	public int getBlinkGameInfoNumber() {
 		return blinkGameInfoNumber;
 	}
@@ -29,21 +33,48 @@ public class BlinkGameInfo extends Word {
 	public void setIncollectingCount(int incollectingCount) {
 		this.incollectingCount = incollectingCount;
 	}
+	public String getIncorrectMeaning() {
+		return incorrectMeaning;
+	}
+	public void setIncorrectMeaning(String incorrectMeaning) {
+		this.incorrectMeaning = incorrectMeaning;
+	}
+	
+	public String getIncorrectYomigana() {
+		return incorrectYomigana;
+	}
+	public void setIncorrectYomigana(String incorrectYomigana) {
+		this.incorrectYomigana = incorrectYomigana;
+	}
 	public BlinkGameInfo() {
 		super();
 	}
-	public BlinkGameInfo(int blinkGameInfoNumber, String incollectBGameWord, String memberID, int incollectingCount) {
+	
+	public BlinkGameInfo(String incollectBGameWord, String incorrectMeaning, String memberID, int incollectingCount) {
+		super();
+		this.incollectBGameWord = incollectBGameWord;
+		this.incorrectMeaning = incorrectMeaning;
+		this.memberID = memberID;
+		this.incollectingCount = incollectingCount;
+	}
+	public BlinkGameInfo(int blinkGameInfoNumber, String incollectBGameWord, String incorrectMeaning
+						, String incorrectYomigana,String memberID, int incollectingCount) {
 		super();
 		this.blinkGameInfoNumber = blinkGameInfoNumber;
 		this.incollectBGameWord = incollectBGameWord;
+		this.incorrectMeaning = incorrectMeaning;
+		this.incorrectYomigana = incorrectYomigana;
 		this.memberID = memberID;
 		this.incollectingCount = incollectingCount;
 	}
 	public BlinkGameInfo(String word, String yomigana, String meaning, String wordLevels, String linkAddress
-						, int blinkGameInfoNumber, String incollectBGameWord, String memberID, int incollectingCount) {
+						, int blinkGameInfoNumber, String incollectBGameWord, String incorrectMeaning, String incorrectYomigana
+						,String memberID, int incollectingCount) {
 		super(word, yomigana, meaning, wordLevels, linkAddress);
 		this.blinkGameInfoNumber = blinkGameInfoNumber;
 		this.incollectBGameWord = incollectBGameWord;
+		this.incorrectMeaning = incorrectMeaning;
+		this.incorrectYomigana = incorrectYomigana;
 		this.memberID = memberID;
 		this.incollectingCount = incollectingCount;
 	}

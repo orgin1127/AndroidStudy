@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:progress="100"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="0dp">
+
+        <ImageView
+            android:id="@+id/blinkLife1"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:paddingBottom="0dp"
+            android:src="@drawable/heartvector" />
+
+        <ImageView
+            android:id="@+id/blinkLife2"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/heartvector" />
+
+        <ImageView
+            android:id="@+id/blinkLife3"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/heartvector" />
+
+        <ImageView
+            android:id="@+id/blinkLife4"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/heartvector" />
+
+        <ImageView
+            android:id="@+id/blinkLife5"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/heartvector" />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/blinkGameInfoTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingTop="20dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="0dp"
+                android:id="@+id/blinkGameWordViewTV"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textColor="#000000" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/blinkGameMeanViewTV"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/inputBlinkGameWordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

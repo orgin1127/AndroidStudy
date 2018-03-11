@@ -36,3 +36,32 @@ create table wordMemorize_CustomWord (
 );
 create sequence wordMemorize_CustomWord_seq;
 
+drop table wordMemorize_CustomWord;
+drop sequence wordMemorize_Word_seq;
+
+create table wordMemorize_BlinkGame (
+                blinkGameNumber number primary key,
+                memberID varchar2(15) not null,
+                highScore number default 0,
+                maxCombo number default 0,
+                playCount number default 0,
+                constraint memberID_FK foreign key (memberID)
+                references wordMemorize_Member (memberID) on delete cascade
+);
+create sequence wordMemorize_BlinkGame_seq;
+
+drop table wordMemorize_BlinkGame;
+drop sequence wordMemorize_BlinkGame_seq;
+
+create table wordMemorize_BlinkGameInfo (
+                blinkGameInfoNumber number primary key,
+                incollectBGameWord varchar2(40),
+                memberID varchar2(15) not null,
+                incollectingCount number default 1,
+                constraint BGImemberID_FK foreign key (memberID)
+                references wordMemorize_Member (memberID) on delete cascade
+);
+create sequence wordMemorize_BlinkGameInfo_seq;
+
+drop table wordMemorize_BlinkGameInfo;
+drop sequence wordMemorize_BlinkGameInfo_seq;

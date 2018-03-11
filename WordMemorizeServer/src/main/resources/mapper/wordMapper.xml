@@ -53,6 +53,15 @@
 		where addedMemberID = #{addedMemberID}
 		order by wordNumber
 	</select>
+	<!-- 단어 보기 by 틀린단어 -->
+	<select id="getIncorllectWordList" parameterType="String" resultType="blinkGameInfo">
+		select
+				*
+		from
+				wordMemorize_BlinkGameInfo
+		where memberID = #{memberID}
+		order by incollectingCount
+	</select>
 	<!-- 단어 검색 by 검색타입 -->
 	<select id="getSearchWord" parameterType="Hashmap" resultType="Word">
   		select 

@@ -11,6 +11,7 @@
     <!-- android test 돌릴 때 화면 lock 풀어야 로그인 touch 가능 -->
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -34,7 +35,8 @@
         <activity
             android:name=".WordViewActivityCustom"
             android:label="@string/title_activity_word_view_custom"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BlinkGameActivity"></activity>
     </application>
 
 </manifest>

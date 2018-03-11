@@ -13,6 +13,6 @@
 	<mappers>
 		<mapper resource="mapper/memberMapper.xml" />
 		<mapper resource="mapper/wordMapper.xml" />
-		<mapper resource="mapper/blinkMapper.xml" />
+		<mapper resource="mapper/blinkGameMapper.xml" />
 	</mappers>
 </configuration>

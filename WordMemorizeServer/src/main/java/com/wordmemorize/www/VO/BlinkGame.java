@@ -1,11 +1,12 @@
 package com.wordmemorize.www.VO;
 
 public class BlinkGame extends Word {
-	 private int blinkGameNumber;
-     private String memberID;
-     private int highScore;
-     private int maxCombo;
-     private int playCount;
+	private int blinkGameNumber;
+    private String memberID;
+    private int highScore;
+    private int maxCombo;
+    private int playCount;
+     
 	public int getBlinkGameNumber() {
 		return blinkGameNumber;
 	}
@@ -35,6 +36,9 @@ public class BlinkGame extends Word {
 	}
 	public void setPlayCount(int playCount) {
 		this.playCount = playCount;
+	}
+	
+	public BlinkGame() {
 	}
 	public BlinkGame(int blinkGameNumber, String memberID, int highScore, int maxCombo, int playCount) {
 		super();

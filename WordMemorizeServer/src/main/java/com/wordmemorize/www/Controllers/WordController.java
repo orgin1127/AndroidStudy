@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.wordmemorize.www.DAO.WordDAO;
+import com.wordmemorize.www.VO.BlinkGameInfo;
 import com.wordmemorize.www.VO.CustomWord;
 import com.wordmemorize.www.VO.Word;
 
@@ -31,16 +32,22 @@ public class WordController {
 							,@RequestParam(value="memberID", defaultValue="") String memberID) {
 		ArrayList<Word> wordList;
 		ArrayList<CustomWord> customWordList;
+		ArrayList<BlinkGameInfo> incollectWordList;
 		String gsonWordList = "";
 		logger.debug(wordLevel+", check");
-		
+		logger.debug(memberID);
 		if(wordLevel.equals("customWord") && !memberID.isEmpty()){
 			CustomWord cw = new CustomWord(memberID);
 			customWordList = wDAO.getCustomWordList(cw);
 			Gson gson = new Gson();
 			gsonWordList = gson.toJson(customWordList);
 		}
-		else {			
+		else if(wordLevel.equals("incollectWord") && !memberID.isEmpty()){
+			incollectWordList = wDAO.getIncorllectWordList(memberID);
+			Gson gson = new Gson();
+			gsonWordList = gson.toJson(incollectWordList);
+		}
+		else {
 			wordList = wDAO.getWordList(wordLevel);
 			Gson gson = new Gson();
 			gsonWordList = gson.toJson(wordList);

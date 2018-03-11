@@ -35,5 +35,10 @@
             android:layout_height="wrap_content"
             android:text="customWord"
             android:id="@+id/customWord"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="틀린 단어"
+            android:id="@+id/incollectWord"/>
     </RadioGroup>
 </LinearLayout>

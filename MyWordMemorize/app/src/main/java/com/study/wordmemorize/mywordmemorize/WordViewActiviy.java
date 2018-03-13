@@ -50,7 +50,7 @@ public class WordViewActiviy extends AppCompatActivity {
     private static ViewPager mViewPager;
     private static int pageNum;
     private String key, searchString, word;
-    private static String viewIncorrectWord;
+    private static String viewIncorrectWord = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -218,13 +218,12 @@ public class WordViewActiviy extends AppCompatActivity {
             Log.d("idk",""+(getArguments().getInt(ARG_SECTION_NUMBER)));
             Log.d("pageNumber","pageNum: "+pageNum+", getArg: "+getArguments().getInt(ARG_SECTION_NUMBER)+", getuser:");
             try{
-                if(viewIncorrectWord != null && viewIncorrectWord.equals("incollectWord")){
+                if(!viewIncorrectWord.equals("") && viewIncorrectWord.equals("incollectWord")){
                     textView.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("incollectBGameWord").toString());
                     yomi.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("incorrectYomigana").toString());
                     mean.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("incorrectMeaning").toString());
                 }
                 else {
-
                     textView.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("word").toString());
                     yomi.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("yomigana").toString());
                     mean.setText(wordList.get(getArguments().getInt(ARG_SECTION_NUMBER)).getString("meaning").toString());
